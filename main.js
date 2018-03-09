@@ -66,14 +66,14 @@ function buyTower(){
 var ancientMagic = 0;
 
 function buyAMagic(){
-    var aMagicCost = Math.floor(100 * Math.pow(1.1,ancientMagic));     //works out the cost of this cursor
+    var aMagicCost = Math.floor(15000 * Math.pow(1.1,ancientMagic));     //works out the cost of this cursor
     if(coins >= aMagicCost){                                   //checks that the player can afford the cursor
         ancientMagic = ancientMagic + 1;                                   //increases number of cursors
     	coins = coins - aMagicCost;                          //removes the cookies spent
         document.getElementById('ancientMagic').innerHTML = ancientMagic;  //updates the number of cursors for the user
         document.getElementById('coins').innerHTML = coins;  //updates the number of cookies for the user
     };
-    var nextCost = Math.floor(100 * Math.pow(1.1,ancientMagic));       //works out the cost of the next cursor
+    var nextCost = Math.floor(15000 * Math.pow(1.1,ancientMagic));       //works out the cost of the next cursor
     document.getElementById('ancientMagicCost').innerHTML = nextCost;  //updates the cursor cost for the user
 };
 
