@@ -1,6 +1,6 @@
 var kills = 0;
 var coins = 0;
-var prestige = 0;
+
 function kill(number){
     kills = kills + number;
     coins = coins + number;
@@ -134,23 +134,3 @@ function autoLoadFunc() {
 }
 autoLoadFunc();
 
-var lastUpdate = Date.now()
-setInterval(function() {
-    let currentUpdate = Date.now()
-    let delta = (currentUpdate - lastUpdate) / 1000 //divided by 1000 because Date.now() is in milliseconds
-    currency += resourcesGainedPerSecond * delta
-
-   lastUpdate = currentUpdate
-}, 100)
-function preventZoom(e) {
-  var t2 = e.timeStamp;
-  var t1 = e.currentTarget.dataset.lastTouch || t2;
-  var dt = t2 - t1;
-  var fingers = e.touches.length;
-  e.currentTarget.dataset.lastTouch = t2;
-
-  if (!dt || dt > 500 || fingers > 1) return; // not double-tap
-
-  e.preventDefault();
-  e.target.click();
-}
