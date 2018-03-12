@@ -97,5 +97,9 @@ window.setInterval(function(){
 	kill(towers);
 
 }, 250);
+window.setInterval(function(){
+	
+	kill(ancientMagic);
 
+}, 28.55);
 
