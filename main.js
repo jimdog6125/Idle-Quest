@@ -74,7 +74,7 @@ function buyAMagic(){
         document.getElementById('coins').innerHTML = coins;  //updates the number of cookies for the user
     };
     var nextCost = Math.floor(15000 * Math.pow(1.1,ancientMagic));       //works out the cost of the next cursor
-    document.getElementById('ancientMagicCost').innerHTML = nextCost;  //updates the cursor cost for the user
+    document.getElementById('aMagicCost').innerHTML = nextCost;  //updates the cursor cost for the user
 };
 
 window.setInterval(function(){
