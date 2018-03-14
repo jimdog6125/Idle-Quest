@@ -1,6 +1,6 @@
 var kills = 0;
 var coins = 0;
-var stuffPs = 0;
+
 function kill(number){
     kills = kills + number;
     coins = coins + number;
@@ -16,7 +16,7 @@ function buySword(){
     if(coins >= swordCost){                                   //checks that the player can afford the cursor
         swords = swords + 1;                                   //increases number of cursors
     	coins = coins - swordCost;
-	stuffPs = stuffPs + 0.5;
+	
         document.getElementById('swords').innerHTML = swords;  //updates the number of cursors for the user
         document.getElementById('coins').innerHTML = coins;  //updates the number of cookies for the user
     };
@@ -31,7 +31,7 @@ function buyMagic(){
     if(coins >= magicCost){                                   //checks that the player can afford the cursor
         magic = magic + 1;                                   //increases number of cursors
     	coins = coins - magicCost;
-	    stuffPs = stuffPs + 1;
+	    
         document.getElementById('magic').innerHTML = magic;  //updates the number of cursors for the user
         document.getElementById('coins').innerHTML = coins;  //updates the number of cookies for the user
     };
@@ -45,7 +45,7 @@ function buyCannon(){
     if(coins >= cannonCost){                                   //checks that the player can afford the cursor
         cannons = cannons + 2;                                   //increases number of cursors
     	coins = coins - cannonCost;
-	    stuffPs = stuffPs + 2;//removes the cookies spent
+	    
         document.getElementById('cannons').innerHTML = cannons;  //updates the number of cursors for the user
         document.getElementById('coins').innerHTML = coins;  //updates the number of cookies for the user
     };
@@ -59,7 +59,7 @@ function buyTower(){
     if(coins >= towerCost){                                   //checks that the player can afford the cursor
         towers = towers + 1;                                   //increases number of cursors
     	coins = coins - towerCost;    
-	   stuffPs = stuffPs + 4;
+	  
         document.getElementById('towers').innerHTML = towers;  //updates the number of cursors for the user
         document.getElementById('coins').innerHTML = coins;  //updates the number of cookies for the user
     };
@@ -74,7 +74,7 @@ function buyAMagic(){
     if(coins >= aMagicCost){                                   //checks that the player can afford the cursor
         ancientMagic = ancientMagic + 1;                                   //increases number of cursors
     	coins = coins - aMagicCost;    
-	    stuffPs = stuffPs + 10;
+	    
         document.getElementById('ancientMagic').innerHTML = ancientMagic;  //updates the number of cursors for the user
         document.getElementById('coins').innerHTML = coins;  //updates the number of cookies for the user
     };
@@ -107,20 +107,10 @@ window.setInterval(function(){
 	kill(ancientMagic);
 
 }, 100);
-function prettify(input){
-    var output = Math.round(input * 1000000)/1000000;
-	return output;
-}
 
 
-var lastUpdate = Date.now()
-setInterval(function() {
-    let currentUpdate = Date.now()
-    let delta = (currentUpdate - lastUpdate) / 1000 //divided by 1000 because Date.now() is in milliseconds
-    coins += stuffPs * delta
-document.getElementById('coins').innerHTML = prettify(coins);
-   lastUpdate = currentUpdate
-}, 100)
+
+
 function save(){
 var game = {
 kills: kills,
@@ -129,8 +119,8 @@ swords: swords,
 magic: magic,
 cannons: cannons,
 towers: towers,
-aMagic: ancientMagic,
-stuffPs: stuffPs
+aMagic: ancientMagic
+
 }
 localStorage.setItem('saveName', game)
 };
