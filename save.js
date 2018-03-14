@@ -1,34 +1,26 @@
 function save(){
-var save = {
-coins: coins,
-kills: kills,
-swords: swords,
-magic: magic,
-cannons: cannons,
-towers: towers
+	var save = {
+    kills: kills,
+    swords: swords,
+    magic: magic,
+		coins: coins,
+		cannons: cannons,
+		towers: towers,
+		ancientMagic: ancientMagic
+
 }
-localStorage.setItem("save",JSON.stringify(save));
-}
-}
+	localStorage.setItem("save",JSON.stringify(save));
 function load(){
-function prettify(input){
-    var output = Math.round(input * 1000000)/1000000;
-	return output;
-}
-var savegame = JSON.parse(localStorage.getItem("save"));
-	if (typeof savegame.kills !== "undefined") kills = savegame.kills;
-document.getElementById('kills').innerHTML = prettify(kills);
+	var savegame = JSON.parse(localStorage.getItem("save"));
+	if (typeof savegame.kills !== "undefined")kills = savegame.kills;
 	if (typeof savegame.coins !== "undefined") coins = savegame.coins;
-document.getElementById('coins').innerHTML = prettify(coins);
 	if (typeof savegame.swords !== "undefined") swords = savegame.swords;
-document.getElementById('swords').innerHTML = prettify(swords);
-	if (typeof savegame.magic !== "undefined") magic = savegame.magic;
-document.getElementById('magic').innerHTML = prettify(magic);
-	if (typeof savegame.cannons !== "undefined") cannons = savegame.cannons;
-document.getElementById('cannons').innerHTML = prettify(cannons);
+	if (typeof savegame.magic !== "undefined") magic = savegame.swords;
+	if (typeof savegame.cannons !== "undefined") cannons = savegame.swords;
 	if (typeof savegame.towers !== "undefined") towers = savegame.towers;
-document.getElementById('towers').innerHTML = prettify(towers);
-}
+	if (typeof savegame.ancientMagic !== "undefined") ancientMagic = savegame.ancientMagic;
+}; kills
+};
 //Autosave
   var saveVar;
 
