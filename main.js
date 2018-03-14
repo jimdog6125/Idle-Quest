@@ -133,3 +133,8 @@ function load(){
 var save = localstorage.getItem('saveName')
 if (save) game = save
 };
+function prettify(input){
+    var output = Math.round(input * 1000000)/1000000;
+	return output;
+}
+document.getElementById('coins').innerHTML = prettify(coins);
