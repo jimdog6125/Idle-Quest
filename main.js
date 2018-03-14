@@ -107,13 +107,18 @@ window.setInterval(function(){
 	kill(ancientMagic);
 
 }, 100);
+function prettify(input){
+    var output = Math.round(input * 1000000)/1000000;
+	return output;
+}
+
 
 var lastUpdate = Date.now()
 setInterval(function() {
     let currentUpdate = Date.now()
     let delta = (currentUpdate - lastUpdate) / 1000 //divided by 1000 because Date.now() is in milliseconds
     coins += stuffPs * delta
-
+document.getElementById('coins').innerHTML = prettify(coins);
    lastUpdate = currentUpdate
 }, 100)
 function save(){
@@ -133,8 +138,3 @@ function load(){
 var save = localstorage.getItem('saveName')
 if (save) game = save
 };
-function prettify(input){
-    var output = Math.round(input * 1000000)/1000000;
-	return output;
-}
-document.getElementById('coins').innerHTML = prettify(coins);
