@@ -112,7 +112,7 @@ var lastUpdate = Date.now()
 setInterval(function() {
     let currentUpdate = Date.now()
     let delta = (currentUpdate - lastUpdate) / 1000 //divided by 1000 because Date.now() is in milliseconds
-    coins += stufPs * delta
+    coins += stuffPs * delta
 
    lastUpdate = currentUpdate
 }, 100)
