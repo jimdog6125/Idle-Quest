@@ -103,3 +103,27 @@ window.setInterval(function(){
 
 }, 100);
 
+var lastUpdate = Date.now()
+setInterval(function() {
+    let currentUpdate = Date.now()
+    let delta = (currentUpdate - lastUpdate) / 1000 //divided by 1000 because Date.now() is in milliseconds
+    currency += resourcesGainedPerSecond * delta
+
+   lastUpdate = currentUpdate
+}, 100)
+function save(){
+var game = {
+kills: kills,
+coins: coins, 
+swords: swords,
+magic: magic,
+cannons: cannons,
+towers: towers,
+aMagic: ancientMagic
+}
+localStorage.setItem('saveName', game)
+};
+function load(){
+var save = localstorage.getItem('saveName')
+if (save) game = save
+};
