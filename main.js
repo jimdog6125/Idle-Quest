@@ -108,13 +108,14 @@ function save(){
     kills: kills,
     swords: swords,
     magic: magic,
-		coins: coins,
-		cannons: cannons,
-		towers: towers,
-		ancientMagic: ancientMagic
+    coins: coins,
+    cannons: cannons,
+    towers: towers,
+    ancientMagic: ancientMagic
 
 }
 	localStorage.setItem("save",JSON.stringify(save));
+};
 function load(){
 	var savegame = JSON.parse(localStorage.getItem("save"));
 	if (typeof savegame.kills !== "undefined")kills = savegame.kills;
