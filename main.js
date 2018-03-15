@@ -125,7 +125,7 @@ aMagic: ancientMagic
 	localStorage.setItem('save', JSON.stringify(save));
 };
 function load(){
-	var save = JSON.parse(localStorage.getItem('save'));
+	var savegame = JSON.parse(localStorage.getItem("save"));
 	if (typeof savegame.kills !== "undefined") kills = savegame.kills;
 	if (typeof savegame.coins !== "undefined") coins = savegame.coins;
 	if (typeof savegame.swords !== "undefined") swords = savegame.swords;
