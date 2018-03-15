@@ -107,6 +107,24 @@ window.setInterval(function(){
 	kill(ancientMagic);
 
 }, 100);
+function chooseMonsters(){
+	document.getElementById("monsters").disabled = true;
+	document.getElementById("humans").disabled = true;
+	document.getElementById('sword').innerHTML = "Buy a Spear";
+	document.getElementById('magics').innerHTML = "Buy Magic";
+	document.getElementById('cannon').innerHTML = "Buy a Catapult";
+	document.getElementById('tower').innerHTML = "Buy a Tower";
+	document.getElementById('aMagics').innerHTML = "Buy Ancient Magic";
+}
+function chooseHumans(){
+	document.getElementById("monsters").disabled = true;
+	document.getElementById("humans").disabled = true;
+	document.getElementById('sword').innerHTML = "Buy a Sword";
+	document.getElementById('magics').innerHTML = "Buy Magic";
+	document.getElementById('cannon').innerHTML = "Buy a Cannon";
+	document.getElementById('tower').innerHTML = "Buy a Tower";
+	document.getElementById('aMagics').innerHTML = "Buy Ancient Magic";
+}
 
 
 
