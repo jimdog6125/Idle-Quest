@@ -112,7 +112,7 @@ window.setInterval(function(){
 
 
 function save(){
-var game = {
+	var save = {
 kills: kills,
 coins: coins, 
 swords: swords,
@@ -121,10 +121,17 @@ cannons: cannons,
 towers: towers,
 aMagic: ancientMagic
 
-}
-localStorage.setItem('saveName', game)
+	};
+	localStorage.setItem('save', JSON.stringify(save));
 };
 function load(){
-var save = localstorage.getItem('saveName')
-if (save) game = save
+	var save = JSON.parse(localStorage.getItem('save'));
+	if (typeof savegame.kills !== "undefined") kills = savegame.kills;
+	if (typeof savegame.coins !== "undefined") coins = savegame.coins;
+	if (typeof savegame.swords !== "undefined") swords = savegame.swords;
+	if (typeof savegame.magic !== "undefined") magic = savegame.magic;
+	if (typeof savegame.cannons !== "undefined") cannons = savegame.cannons;
+	if (typeof savegame.towers !== "undefined") towers = savegame.towers;
+	if (typeof savegame.aMagic !== "undefined") ancientMagic = savegame.aMagic;
+	
 };
