@@ -1,6 +1,6 @@
 var kills = 0;
 var coins = 0;
-
+var choice = "";
 function kill(number){
     kills = kills + number;
     coins = coins + number;
@@ -115,6 +115,7 @@ function chooseMonsters(){
 	document.getElementById('cannon').innerHTML = "Buy a Catapult";
 	document.getElementById('tower').innerHTML = "Buy a Tower";
 	document.getElementById('aMagics').innerHTML = "Buy Ancient Magic";
+	var choice = "monsters"
 }
 function chooseHumans(){
 	document.getElementById("monsters").disabled = true;
@@ -124,6 +125,7 @@ function chooseHumans(){
 	document.getElementById('cannon').innerHTML = "Buy a Cannon";
 	document.getElementById('tower').innerHTML = "Buy a Tower";
 	document.getElementById('aMagics').innerHTML = "Buy Ancient Magic";
+	var choice = "humans";
 }
 
 
@@ -137,7 +139,8 @@ swords: swords,
 magic: magic,
 cannons: cannons,
 towers: towers,
-aMagic: ancientMagic
+aMagic: ancientMagic,
+choice: choice
 
 	};
 	localStorage.setItem('save', JSON.stringify(save));
@@ -151,5 +154,6 @@ function load(){
 	if (typeof savegame.cannons !== "undefined") cannons = savegame.cannons;
 	if (typeof savegame.towers !== "undefined") towers = savegame.towers;
 	if (typeof savegame.aMagic !== "undefined") ancientMagic = savegame.aMagic;
+	if (typeof savegame.choice !== "undefined") choice = savegame.choice;
 	
 };
