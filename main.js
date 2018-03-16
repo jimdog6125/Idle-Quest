@@ -135,7 +135,7 @@ function chooseMonsters(){
 	document.getElementById('cannon').innerHTML = "Buy a Catapult";
 	document.getElementById('tower').innerHTML = "Buy a Salamander";
 	document.getElementById('aMagics').innerHTML = "Buy Ancient Magic";
-	document.getElementById('ship').innerHTML = "Buy A Dragon";
+	
 	var choice = "monsters"
 }
 function chooseHumans(){
@@ -146,7 +146,7 @@ function chooseHumans(){
 	document.getElementById('cannon').innerHTML = "Buy a Cannon";
 	document.getElementById('tower').innerHTML = "Buy a Tower";
 	document.getElementById('aMagics').innerHTML = "Buy Ancient Magic";
-	document.getElementById('ship').innerHTML = "Buy a Ship";
+	
 	var choice = "humans";
 }
 
@@ -162,7 +162,7 @@ magic: magic,
 cannons: cannons,
 towers: towers,
 aMagic: ancientMagic,
-ships: ships,
+
 choice: choice
 
 	};
@@ -177,7 +177,7 @@ function load(){
 	if (typeof savegame.cannons !== "undefined") cannons = savegame.cannons;
 	if (typeof savegame.towers !== "undefined") towers = savegame.towers;
 	if (typeof savegame.aMagic !== "undefined") ancientMagic = savegame.aMagic;
-	if (typeof savegame.ships !== "undefined") ships = savegame.ships;
+	
 	if (typeof savegame.choice !== "undefined") choice = savegame.choice;
 	
 };
