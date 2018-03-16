@@ -81,19 +81,6 @@ function buyAMagic(){
     var nextCost = Math.floor(15000 * Math.pow(1.1,ancientMagic));       //works out the cost of the next cursor
     document.getElementById('aMagicCost').innerHTML = nextCost;  //updates the cursor cost for the user
 };
-var ships = 0;
-function buyShip(){
-    var shipCost = Math.floor(100000 * Math.pow(1.1,ships));     //works out the cost of this cursor
-    if(coins >= shipCost){                                   //checks that the player can afford the cursor
-        ships = ships + 1;                                   //increases number of cursors
-    	coins = coins - shipCost;    
-	    
-        document.getElementById('ships').innerHTML = ships;  //updates the number of cursors for the user
-        document.getElementById('coins').innerHTML = coins;  //updates the number of cookies for the user
-    };
-    var nextCost = Math.floor(100000 * Math.pow(1.1,ships));       //works out the cost of the next cursor
-    document.getElementById('shipCost').innerHTML = nextCost;  //updates the cursor cost for the user
-};
 
 
 window.setInterval(function(){
@@ -121,11 +108,6 @@ window.setInterval(function(){
 	kill(ancientMagic);
 
 }, 100);
-window.setInterval(function(){
-	
-	kill(ships);
-
-}, 20);
 
 function chooseMonsters(){
 	document.getElementById("monsters").disabled = true;
@@ -135,7 +117,7 @@ function chooseMonsters(){
 	document.getElementById('cannon').innerHTML = "Buy a Catapult";
 	document.getElementById('tower').innerHTML = "Buy a Salamander";
 	document.getElementById('aMagics').innerHTML = "Buy Ancient Magic";
-	document.getElementById('ship').innerHTML = "Buy A Dragon";
+	
 	
 	var choice = "monsters"
 }
@@ -147,7 +129,7 @@ function chooseHumans(){
 	document.getElementById('cannon').innerHTML = "Buy a Cannon";
 	document.getElementById('tower').innerHTML = "Buy a Tower";
 	document.getElementById('aMagics').innerHTML = "Buy Ancient Magic";
-	document.getElementById('ship').innerHTML = "Buy A Ship";
+	
 	
 	var choice = "humans";
 }
@@ -164,7 +146,6 @@ magic: magic,
 cannons: cannons,
 towers: towers,
 aMagic: ancientMagic,
-ships: ships
 
 choice: choice
 
@@ -180,7 +161,7 @@ function load(){
 	if (typeof savegame.cannons !== "undefined") cannons = savegame.cannons;
 	if (typeof savegame.towers !== "undefined") towers = savegame.towers;
 	if (typeof savegame.aMagic !== "undefined") ancientMagic = savegame.aMagic;
-	if (typeof savegame.ships !== "undefined") ships = savegame.ships;
+	
 	if (typeof savegame.choice !== "undefined") choice = savegame.choice;
 	
 };
