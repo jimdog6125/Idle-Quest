@@ -43,7 +43,7 @@ var cannons = 0;
 function buyCannon(){
     var cannonCost = Math.floor(500 * Math.pow(1.1,cannons));     //works out the cost of this cursor
     if(coins >= cannonCost){                                   //checks that the player can afford the cursor
-        cannons = cannons + 2;                                   //increases number of cursors
+        cannons = cannons + 1;                                   //increases number of cursors
     	coins = coins - cannonCost;
 	    
         document.getElementById('cannons').innerHTML = cannons;  //updates the number of cursors for the user
