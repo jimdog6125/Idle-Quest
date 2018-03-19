@@ -150,7 +150,7 @@ swordCost: swordCost,
 magicCost: magicCost,
 cannonCost: cannonCost,
 towerCost: towerCost,
-aMagicCost: ancientCost,
+aMagicCost: aMagicCost,
 choice: choice
 
 	};
