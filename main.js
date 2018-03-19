@@ -10,9 +10,9 @@ function kill(number){
 };
 
 var swords = 0;
-
+var swordCost = Math.floor(10 * Math.pow(1.1,swords));
 function buySword(){
-    var swordCost = Math.floor(10 * Math.pow(1.1,swords));     //works out the cost of this cursor
+         //works out the cost of this cursor
     if(coins >= swordCost){                                   //checks that the player can afford the cursor
         swords = swords + 1;                                   //increases number of cursors
     	coins = coins - swordCost;
@@ -25,9 +25,9 @@ function buySword(){
 };
 
 var magic = 0;
-
+var magicCost = Math.floor(100 * Math.pow(1.1,magic));
 function buyMagic(){
-    var magicCost = Math.floor(100 * Math.pow(1.1,magic));     //works out the cost of this cursor
+         //works out the cost of this cursor
     if(coins >= magicCost){                                   //checks that the player can afford the cursor
         magic = magic + 1;                                   //increases number of cursors
     	coins = coins - magicCost;
@@ -39,9 +39,9 @@ function buyMagic(){
     document.getElementById('magicCost').innerHTML = nextCost;  //updates the cursor cost for the user
 };
 var cannons = 0;
-
+var cannonCost = Math.floor(500 * Math.pow(1.1,cannons));
 function buyCannon(){
-    var cannonCost = Math.floor(500 * Math.pow(1.1,cannons));     //works out the cost of this cursor
+         //works out the cost of this cursor
     if(coins >= cannonCost){                                   //checks that the player can afford the cursor
         cannons = cannons + 1;                                   //increases number of cursors
     	coins = coins - cannonCost;
@@ -53,9 +53,9 @@ function buyCannon(){
     document.getElementById('cannonCost').innerHTML = nextCost;  //updates the cursor cost for the user
 };
 var towers = 0;
-
+var towerCost = Math.floor(5000 * Math.pow(1.1,towers));
 function buyTower(){
-    var towerCost = Math.floor(5000 * Math.pow(1.1,towers));     //works out the cost of this cursor
+         //works out the cost of this cursor
     if(coins >= towerCost){                                   //checks that the player can afford the cursor
         towers = towers + 1;                                   //increases number of cursors
     	coins = coins - towerCost;    
@@ -68,9 +68,9 @@ function buyTower(){
 };
 
 var ancientMagic = 0;
-
+var aMagicCost = Math.floor(15000 * Math.pow(1.1,ancientMagic));
 function buyAMagic(){
-    var aMagicCost = Math.floor(15000 * Math.pow(1.1,ancientMagic));     //works out the cost of this cursor
+        //works out the cost of this cursor
     if(coins >= aMagicCost){                                   //checks that the player can afford the cursor
         ancientMagic = ancientMagic + 1;                                   //increases number of cursors
     	coins = coins - aMagicCost;    
@@ -146,7 +146,11 @@ magic: magic,
 cannons: cannons,
 towers: towers,
 aMagic: ancientMagic,
-
+swordCost: swordCost,
+magicCost: magicCost,
+cannonCost: cannonCost,
+towerCost: towerCost,
+aMagicCost: ancientCost,
 choice: choice
 
 	};
@@ -155,13 +159,29 @@ choice: choice
 function load(){
 	var savegame = JSON.parse(localStorage.getItem("save"));
 	if (typeof savegame.kills !== "undefined") kills = savegame.kills;
+	document.getElementById('kills').innerHTML = kills;
 	if (typeof savegame.coins !== "undefined") coins = savegame.coins;
+	document.getElementById('coins').innerHTML = coins;
 	if (typeof savegame.swords !== "undefined") swords = savegame.swords;
+	document.getElementById('swords').innerHTML = swords;
 	if (typeof savegame.magic !== "undefined") magic = savegame.magic;
+	document.getElementById('magic').innerHTML = magic;
 	if (typeof savegame.cannons !== "undefined") cannons = savegame.cannons;
+	document.getElementById('cannons').innerHTML = cannons;
 	if (typeof savegame.towers !== "undefined") towers = savegame.towers;
+	document.getElementById('towers').innerHTML = towers;
 	if (typeof savegame.aMagic !== "undefined") ancientMagic = savegame.aMagic;
-	
+	document.getElementById('ancientMagic').innerHTML = ancientMagic;
 	if (typeof savegame.choice !== "undefined") choice = savegame.choice;
-	
+	document.getElementById('choice').innerHTML = choice;
+	if (typeof savegame.swordCost !== "undefined") swordCost = savegame.swordCost;
+	document.getElementById('swordCost').innerHTML = swordCost;
+	if (typeof savegame.magicCost !== "undefined") magicCost = savegame.magicCost;
+	document.getElementById('magicCost').innerHTML = magicCost;
+	if (typeof savegame.cannonCost !== "undefined") cannonCost = savegame.cannonCost;
+	document.getElementById('cannonCost').innerHTML = cannonCost;
+	if (typeof savegame.towerCost !== "undefined") towerCost = savegame.towerCost;
+	document.getElementById('towerCost').innerHTML = towerCost;
+	if (typeof savegame.aMagicCost !== "undefined") aMagicCost = savegame.aMagicCost;
+	document.getElementById('aMagicCost').innerHTML = aMagicCost;
 };
